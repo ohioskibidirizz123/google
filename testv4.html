@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #linkInput {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        #openButton {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #iframeContainer {
+            width: 100%;
+            height: 70vh;
+            margin-top: 20px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+        #iframeContainer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Paste your link here:</h2>
+    <textarea id="linkInput" placeholder="Paste your link here"></textarea>
+    <button id="openButton" onclick="openLink()">Open Link</button>
+
+    <div id="iframeContainer">
+        <iframe id="iframe"></iframe>
+    </div>
+
+    <script>
+        function openLink() {
+            var linkInput = document.getElementById("linkInput").value;
+            var iframe = document.getElementById("iframe");
+            iframe.src = linkInput;
+        }
+    </script>
+</body>
+</html>
