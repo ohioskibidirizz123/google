@@ -6,14 +6,39 @@
     <title>Links in Iframe</title>
 </head>
 <body>
-    <iframe id="iframe" src="" style="width:100%; height:100vh; border:none;"></iframe>
+    <h2>Add Links</h2>
+    <form id="linkForm">
+        <input type="text" id="linkInput" placeholder="Enter link URL">
+        <button type="button" onclick="addLink()">Add Link</button>
+    </form>
 
-    <ul>
-        <li><a href="https://www.example.com" target="iframe">Example Website</a></li>
-        <li><a href="https://www.wikipedia.org" target="iframe">Wikipedia</a></li>
-        <li><a href="https://www.openai.com" target="iframe">OpenAI</a></li>
+    <h2>Links</h2>
+    <ul id="linkList">
     </ul>
+
+    <button type="button" onclick="openLinks()">Open Links</button>
+
+    <iframe id="iframe" src="" style="width:100%; height:400px; border:none;"></iframe>
+
+    <script>
+        function addLink() {
+            var linkInput = document.getElementById("linkInput").value;
+            var linkList = document.getElementById("linkList");
+            var listItem = document.createElement("li");
+            var link = document.createElement("a");
+            link.href = linkInput;
+            link.textContent = linkInput;
+            listItem.appendChild(link);
+            linkList.appendChild(listItem);
+        }
+
+        function openLinks() {
+            var iframe = document.getElementById("iframe");
+            var links = document.querySelectorAll("#linkList a");
+            if (links.length > 0) {
+                iframe.src = links[0].href;
+            }
+        }
+    </script>
 </body>
 </html>
-
-
