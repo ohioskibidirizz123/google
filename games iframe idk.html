@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .game-link {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .game-link:hover {
+            background-color: #0056b3;
+        }
+        #iframeContainer {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            width: 80%;
+            height: 500px;
+        }
+        #iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Selection</h1>
+    <a class="game-link" href="https://www.miniclip.com/games/en/" target="iframe">MiniClip Games</a>
+    <a class="game-link" href="https://www.coolmathgames.com/" target="iframe">Cool Math Games</a>
+    <a class="game-link" href="https://www.poki.com/" target="iframe">Poki Games</a>
+    <a class="game-link" href="https://www.kongregate.com/" target="iframe">Kongregate Games</a>
+    <a class="game-link" href="https://www.addictinggames.com/" target="iframe">Addicting Games</a>
+
+    <div id="iframeContainer">
+        <iframe id="iframe" src="about:blank"></iframe>
+    </div>
+</body>
+</html>
