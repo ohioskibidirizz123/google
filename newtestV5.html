@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paste and Open Link</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #linkInput {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        #openButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Paste your link here:</h2>
+    <textarea id="linkInput" placeholder="Paste your link here"></textarea>
+    <button id="openButton" onclick="openLink()">Open Link</button>
+
+    <script>
+        function openLink() {
+            var linkInput = document.getElementById("linkInput").value;
+            // Open the link in a new tab with about:blank
+            var newTab = window.open('about:blank');
+            // Set the location of the new tab to the provided link
+            newTab.location.href = linkInput;
+        }
+    </script>
+</body>
+</html>
